@@ -2,7 +2,7 @@ Dynamic Widgets (Jetpack Compose)
 
 Overview
 - Dynamic dashboard screen built using Jetpack Compose
-- Widgets are rendered **purely from backend metadata
+- Widgets are rendered purely from backend metadata
 - Focus on:
   - Clean architecture
   - State management
@@ -22,7 +22,7 @@ What’s Implemented
     - Stateful
     - Loading / Success / Error states
 - Supports multiple instances of the same widget type**
-- Uses **fake/static data** (no real APIs)
+- Uses fake/static data** (no real APIs)
 
 ---
 
@@ -30,18 +30,18 @@ Architecture
 - MVVM architecture
 - No business logic inside composables
 - ViewModels manage all state
-- Each widget instance is scoped using `instanceId`
+- Each widget instance is scoped using instanceId
 
 Package structure:
-- `data/` → models and fake data sources
-- `presentation/` → Compose UI
-- `viewmodel/` → ViewModels
+- data/ → models and fake data sources
+- presentation/ → Compose UI
+- viewmodel/ → ViewModels
 
 ---
 
 Widget Identity & State
 - Each widget instance is uniquely identified by:
-  - `WidgetType + instanceId`
+  - WidgetType + instanceId
 - This key is used when creating ViewModels
 - Ensures:
   - State isolation
@@ -54,7 +54,7 @@ Banner Widget
 - Stateless UI component
 - Data driven by fake backend
 - Supports single or multiple banners
-- Rendered using `LazyRow`
+- Rendered using LazyRow
 - Kept stateless since no async or user-driven state is required
 
 ---
@@ -66,11 +66,11 @@ List Widget
   - Loading state
   - Success state
   - Error state
-- State is fully isolated using `instanceId`
+- State is fully isolated using instanceId
 
 ---
 
-## Assumptions
+Assumptions
 - Backend metadata is always valid
 - UI is intentionally minimal
 - Focus is on architecture and reasoning
