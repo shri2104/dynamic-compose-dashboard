@@ -23,10 +23,10 @@ class ListWidgetViewModel(
     private fun fetchData() {
         viewModelScope.launch {
             try {
-                val data = ListDataGenerator.getListData(instanceId)
-                uiState = ListUiState.Success(data)
+                val data =ListDataGenerator.getListData(instanceId)
+                uiState=ListUiState.Success(data)
             } catch (e: Exception) {
-                uiState = ListUiState.Error(e.message ?: "Unknown error")
+                uiState =ListUiState.Error(e.message ?: "Unknown error")
             }
         }
     }
